@@ -58,7 +58,7 @@ rf_clf_score = rf_clf.score(X_train, y_train)
 # Create a function that accepts 'model', island', 'bill_length_mm', 'bill_depth_mm', 'flipper_length_mm', 'body_mass_g' and 'sex' as inputs and returns the species name.
 @st.cache()
 def prediction(model , island , bill_ln_mm , bill_dp_mm , flip_ln_mm , bmg , sex):
-   species = svc_model.predict([[model , island , bill_ln_mm , bill_dp_mm , flip_ln_mm , bmg , sex]])
+   species = model.predict([[island , bill_ln_mm , bill_dp_mm , flip_ln_mm , bmg , sex]])
    species = species[0]
    if species == 0:
     return "Adelie"
